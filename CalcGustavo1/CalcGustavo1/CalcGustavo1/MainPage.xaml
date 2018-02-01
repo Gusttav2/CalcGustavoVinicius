@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalcGustavo1"
+             x:Class="CalcGustavo1.MainPage">
+
+    <Grid Padding="5" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="resultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black" Text="{Binding Visor}"
+              TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+              Grid.ColumnSpan="4" Margin="2" />
+        <!--Numeros-->
+        
+        <Button 
+            x:Name="b7"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b7}, Path=Text}"
+            Text="7"
+            Grid.Row="1" 
+            Grid.Column="0"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b8"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b8}, Path=Text}"
+            Text="8"
+            Grid.Row="1" 
+            Grid.Column="1"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b9"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b9}, Path=Text}"
+            Text="9"
+            Grid.Row="1" 
+            Grid.Column="2"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+
+        <Button 
+            x:Name="b4"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b4}, Path=Text}"
+            Text="4"
+            Grid.Row="2" 
+            Grid.Column="0"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b5"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b5}, Path=Text}"
+            Text="5"
+            Grid.Row="2" 
+            Grid.Column="1"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b6"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b6}, Path=Text}"
+            Text="6"
+            Grid.Row="2" 
+            Grid.Column="2"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+         
+        
+        <Button 
+            x:Name="b1"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b1}, Path=Text}"
+            Text="1"
+            Grid.Row="3" 
+            Grid.Column="0"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b2"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b2}, Path=Text}"
+            Text="2"
+            Grid.Row="3" 
+            Grid.Column="1"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b3"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b3}, Path=Text}"
+            Text="3"
+            Grid.Row="3" 
+            Grid.Column="2"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="b0"
+            Command="{Binding InsereNumeroCommand}"
+            CommandParameter="{Binding Source={x:Reference b0}, Path=Text}"
+            Text="0"
+            Grid.Row="4" 
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black" 
+            BackgroundColor="White" 
+            FontSize="36"/>
+       
+        <!--Botões de Funções Matemáticas-->
+        <Button 
+            x:Name="bDivisao"
+            Command="{Binding InsereOperacaoCommand}" 
+            CommandParameter="{Binding Source={x:Reference bDivisao}, Path=Text}"
+            Text="/"
+            BackgroundColor="Blue"
+            Grid.Row="1" 
+            Grid.Column="3"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="Black"            
+            FontSize="36"/>
+        
+        <Button 
+            x:Name="bMult"
+            Command="{Binding InsereOperacaoCommand}" 
+            CommandParameter="{Binding Source={x:Reference bMult}, Path=Text}"
+            Text="*"
+            BackgroundColor="Blue"
+            Grid.Row="2" 
+            Grid.Column="3"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="bSoma"
+            Command="{Binding InsereOperacaoCommand}" 
+            CommandParameter="{Binding Source={x:Reference bSoma}, Path=Text}"
+            Text="+"
+            BackgroundColor="Blue"
+            Grid.Row="3" 
+            Grid.Column="3"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="White" 
+            FontSize="36"/>
+        <Button 
+            x:Name="bSub"
+            Command="{Binding InsereOperacaoCommand}" 
+            CommandParameter="{Binding Source={x:Reference bSub}, Path=Text}"            
+            Text="-"
+            BackgroundColor="Blue"
+            Grid.Row="4" 
+            Grid.Column="3"
+            BorderRadius="1" 
+            BorderColor="Black" 
+            TextColor="White" 
+            FontSize="36"/>
+        
+        
+        <Button Text="C" Grid.Row="5" Grid.Column="0"
+                BackgroundColor="Red" TextColor="White"
+                FontSize="36" BorderRadius="0" Command="{Binding LimpaTudoCommand}"
+                />
+
+        <Button Text="=" 
+                Command="{Binding RealizaOperacaoCommand}" 
+                Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                BackgroundColor="Blue" TextColor="White"
+                FontSize="36" BorderRadius="0"  />
+
+        <Image
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Source="image.jpg"
+            HorizontalOptions="FillAndExpand"
+            WidthRequest="200"
+            HeightRequest="40"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+
+</ContentPage>
